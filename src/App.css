@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --ff-primary: "Red Rose", cursive;
+  --primary-clr: linear-gradient(90deg, #a02279 11.45%, #a02279 11.45%);
+  --primary-clr-hover: linear-gradient(90deg, #d02279 5.45%, #d02279 5.45%);
+  --button-color: linear-gradient(124.4deg, #ffffff 10.8%, #ffffff 87.34%);
+  --black: #434343;
+  --overlay--color: rgba(64, 64, 64, 0.3);
+  --footer-white: #f1f3f9;
+  --copy-white: #f7f7f7;
+  --modal-color: #f8f9fa;
+  --f-weight: 700;
+  --f-weight-2: 400;
+  --transition: all 0.3s linear;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+link,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn {
+  font-family: var(--ff-primary);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section-center {
+  margin: 0 2rem;
+  margin-top: 2.875rem;
+}
+.nav-center {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
+.navlinks {
+  display: flex;
+  gap: 3rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.links {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--f-weight-2);
+  font-family: var(--ff-primary);
+  transition: var(--transition);
+  font-size: 1.25rem;
+}
+.links:hover {
+  color: #656565;
+}
+.btn {
+  background: var(--primary-clr);
+  border: none;
+  padding: 1rem 1.625rem;
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn:hover {
+  background: var(--primary-clr-hover);
+}
+.navbutton {
+  height: 1rem;
+}
+.menu {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 992px) {
+  .navlogo {
+    height: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .nav-icon {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .connect {
+    display: none;
+  }
+  .navlinks {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    margin: 0 6.25rem;
+    margin-top: 2.875rem;
+  }
+  .navlogo {
+    height: 2rem;
+  }
+  .nav-icon {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .connect {
+    display: block;
+  }
+  .navlinks {
+    display: flex;
+  }
+  .navbutton {
+    display: none;
   }
 }
