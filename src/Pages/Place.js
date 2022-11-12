@@ -1,6 +1,14 @@
 import React from "react";
+import { Navbar } from "../Components/Navbar";
 
 function Place() {
-  return <h1>Place</h1>;
+  return (
+    <section>
+      <div className="section-center">
+        <Navbar />
+        <h1>Place</h1>
+      </div>
+    </section>
+  );
 }
 export default Place;
