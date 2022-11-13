@@ -156,7 +156,6 @@ Hero Center
 }
 .title-clr {
   text-transform: capitalize;
-  /* color: var(--primary-clr); */
   color: #a02279;
 }
 .hero-info {
