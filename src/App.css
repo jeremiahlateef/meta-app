@@ -11,6 +11,7 @@
 :root {
   --ff-primary: "Red Rose", cursive;
   --primary-clr: linear-gradient(90deg, #a02279 11.45%, #a02279 11.45%);
+  --primary-clr-2: linear-gradient(124.4deg, #ffffff 10.8%, #ffffff 87.34%);
   --primary-clr-hover: linear-gradient(90deg, #d02279 5.45%, #d02279 5.45%);
   --button-color: linear-gradient(124.4deg, #ffffff 10.8%, #ffffff 87.34%);
   --black: #434343;
@@ -30,6 +31,8 @@ h3,
 h4,
 h5,
 h6,
+input,
+button,
 .btn {
   font-family: var(--ff-primary);
 }
@@ -37,6 +40,11 @@ h6,
   margin: 0 2rem;
   margin-top: 2.875rem;
 }
+/* 
+===============
+Navbar
+===============
+*/
 .nav-center {
   display: flex;
   align-items: center;
@@ -60,13 +68,14 @@ h6,
 .btn {
   background: var(--primary-clr);
   border: none;
-  padding: 1rem 1.625rem;
-  border-radius: 10px;
+  padding: 0 1.625rem;
+  height: 3rem;
   color: #fff;
   transition: all 0.2s linear;
   cursor: pointer;
   font-size: 1rem;
 }
+
 .btn:hover {
   background: var(--primary-clr-hover);
 }
@@ -79,7 +88,7 @@ h6,
   width: 100%;
   object-fit: cover;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
   .navlogo {
     height: 1.5rem;
   }
@@ -95,9 +104,10 @@ h6,
     display: none;
   }
 }
-@media screen and (min-width: 992px) {
+
+@media screen and (min-width: 1024px) {
   .section-center {
-    margin: 0 6.25rem;
+    margin: 0 3.25rem;
     margin-top: 2.875rem;
   }
   .navlogo {
@@ -110,11 +120,319 @@ h6,
   }
   .connect {
     display: block;
+    border-radius: 10px;
   }
   .navlinks {
     display: flex;
   }
   .navbutton {
     display: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .section-center {
+    margin: 0 6.25rem;
+    margin-top: 2.875rem;
+  }
+}
+/* 
+===============
+End of Navbar
+===============
+*/
+
+/* 
+===============
+Hero Center
+===============
+*/
+.hero-center {
+  margin-top: 4rem;
+}
+.title {
+  font-weight: var(--f-weight);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+.title-clr {
+  text-transform: capitalize;
+  /* color: var(--primary-clr); */
+  color: #a02279;
+}
+.hero-info {
+  font-size: 1.25rem;
+  color: var(--black);
+  font-weight: var(--f-weight-2);
+  margin-bottom: 3rem;
+}
+.form-cont {
+  width: 70vw;
+  margin-bottom: 2rem;
+}
+.location {
+  height: 3rem;
+  padding-left: 1rem;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid #a3a3a3;
+  width: 60%;
+}
+.search-btn {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 40%;
+}
+.images-center {
+  display: grid;
+  justify-content: center;
+  align-self: center;
+  /* gap: 1.5rem; */
+}
+.hero-img {
+  height: 5rem;
+  object-fit: cover;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .hero-center {
+    display: flex;
+    gap: 3rem;
+  }
+  .hero-text,
+  .hero-images {
+    width: 50%;
+  }
+  .form-cont {
+    width: 100%;
+  }
+  .images-center {
+    grid-template-rows: 150px 150px;
+    gap: 1rem;
+    grid-template-areas:
+      "a b b"
+      "a c d"
+      "a c d";
+  }
+  .hero-one,
+  .hero-two,
+  .hero-three,
+  .hero-four {
+    height: 100%;
+    border: 2px solid red;
+  }
+
+  .hero-three {
+    grid-area: c;
+  }
+  .hero-four {
+    grid-area: d;
+  }
+
+  .hero-one {
+    grid-area: a;
+  }
+  .hero-two {
+    grid-area: b;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero-center {
+    margin-top: 7.81rem;
+  }
+  .hero-info {
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 3.5rem;
+  }
+}
+.hero-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--primary-clr);
+  min-width: 95vw;
+  height: 4.375rem;
+  padding: 0.5rem;
+  margin-top: 4.2rem;
+}
+.tokens {
+  height: 2rem;
+}
+@media screen and (max-width: 426px) {
+  .form-cont {
+    min-width: 80vw;
+    margin-bottom: 2rem;
+  }
+  .hero-footer {
+    gap: 0.25rem;
+  }
+  .tokens {
+    height: 1.35rem;
+  }
+}
+@media screen and (max-width: 321px) {
+  .tokens {
+    height: 1.15rem;
+  }
+}
+/* 
+===============
+End of Hero Center
+===============
+*/
+/* 
+===============
+Adventure Center
+===============
+*/
+.small-title {
+  color: #000;
+  font-weight: var(--f-weight);
+  text-align: center;
+  margin-bottom: 2.625rem;
+  font-size: 3rem;
+}
+.nft-card {
+  background: var(--primary-clr-2);
+  border-radius: 1rem;
+  border: 1px solid #d7d7d7;
+  padding: 15px;
+}
+.nft-images {
+  margin-bottom: 1rem;
+}
+.nft-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+.nft-title,
+.nft-rates,
+.distance,
+.avail {
+  font-weight: var(--f-weight-2);
+  color: var(--black);
+  font-size: 0.75rem;
+}
+.nft-rates {
+  font-weight: var(--f-weight);
+}
+.nft-distance {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+.nft {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  object-fit: cover;
+}
+.nft-images {
+  max-width: 100%;
+  max-height: 100%;
+}
+@media screen and (min-width: 375px) {
+  .nft-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+  .nft-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+@media screen and (min-width: 768px) {
+  .nft-center {
+    justify-content: center;
+  }
+  .nft-card {
+    flex: 0 0 calc(33.33% - 1rem);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nft-center {
+    justify-content: center;
+  }
+  .nft-card {
+    flex: 0 0 calc(20% - 1rem);
+  }
+  .nft-images {
+    max-width: 120%;
+    max-height: 100%;
+  }
+}
+/* 
+===============
+Adventure Center
+===============
+*/
+.meta {
+  background: var(--primary-clr);
+}
+.meta-center {
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+}
+.meta-text {
+  margin: 0 auto;
+}
+.meta-title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: var(--f-weight);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.meta-info {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: var(--f-weight-2);
+  max-width: 25rem;
+  line-height: 35px;
+  margin: 0 auto;
+}
+.meta-button {
+  background: var(--primary-clr-2);
+  color: #a02279;
+  border-radius: 8px;
+  margin-top: 3.5rem;
+}
+.btn-cont {
+  width: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.meta-image {
+  width: 25rem;
+  height: 20rem;
+  margin: 0 auto;
+  display: none;
+}
+.meta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .meta-center {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .meta-image {
+    display: block;
+  }
+  .meta-title {
+    text-align: left;
+  }
+  .meta-info,
+  .btn-cont {
+    margin-left: 0;
   }
 }
