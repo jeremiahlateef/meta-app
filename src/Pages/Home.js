@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "../Components/Navbar";
+import { Footer } from "../Components/Footer";
 import HeroOne from "../Images/hero1.png";
 import HeroTwo from "../Images/hero2.png";
 import HeroThree from "../Images/hero3.png";
@@ -192,7 +193,7 @@ function Home() {
                 amazing gift cards which are traded as NFTs. These NFTs gives
                 our cutomer access to loads of our exclusive services.
               </p>
-              <div className="div btn-cont">
+              <div className="btn-cont">
                 <button type="button" className="meta-button btn">
                   Learn more
                 </button>
@@ -204,6 +205,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </section>
   );
 }
