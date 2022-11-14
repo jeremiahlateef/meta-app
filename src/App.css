@@ -368,7 +368,12 @@ Adventure Center
 }
 /* 
 ===============
-Adventure Center
+End of Adventure Center
+===============
+*/
+/* 
+===============
+Meta Center
 ===============
 */
 .meta {
@@ -401,6 +406,9 @@ Adventure Center
   color: #a02279;
   border-radius: 8px;
   margin-top: 3.5rem;
+}
+.meta-button:hover {
+  background: var(--primary-clr-2);
 }
 .btn-cont {
   width: 10rem;
@@ -435,3 +443,85 @@ Adventure Center
     margin-left: 0;
   }
 }
+/* 
+===============
+End of Meta Center
+===============
+*/
+/* 
+===============
+Footer
+===============
+*/
+.foot {
+  background: #1d1d1e;
+  margin-top: -2.875rem;
+  padding-top: 3.625rem;
+  padding-bottom: 2.4rem;
+}
+.foot-logo {
+  margin-bottom: 2rem;
+}
+.social-icons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.logos-cont {
+  display: grid;
+  align-content: space-between;
+  justify-content: center;
+  /* border: 2px solid red; */
+}
+.foot-small-title {
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: var(--f-weight);
+  margin-bottom: 1.5rem;
+}
+.small-links {
+  margin-bottom: 0.75rem;
+  color: #fff;
+  font-weight: var(--f-weight-2);
+  font-size: 0.875rem;
+}
+.footer-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.copy {
+  color: #fff;
+  font-weight: var(--f-weight-2);
+  font-size: 1rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+.desktop {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .long-cont {
+    height: 8rem;
+  }
+  .logo-contain {
+    margin-bottom: 2rem;
+  }
+  .social-icons {
+    justify-content: flex-start;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+
+/* 
+===============
+End of Footer
+===============
+*/
