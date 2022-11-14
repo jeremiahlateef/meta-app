@@ -525,3 +525,41 @@ Footer
 End of Footer
 ===============
 */
+/* 
+===============
+Place
+===============
+*/
+.place {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+.place-links {
+  color: var(--black);
+  font-size: 1.25rem;
+  font-weight: var(--f-weight-2);
+}
+.settings-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #b4b4b4;
+  border-radius: 8px;
+  width: 10rem;
+}
+.place-nft {
+  margin-bottom: 5.75rem;
+}
+.footer-place {
+  margin-top: 2.875rem;
+}
+/* 
+===============
+End of Place
+===============
+*/
