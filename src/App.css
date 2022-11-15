@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap");
 
 *,
 ::before,
@@ -81,12 +82,26 @@ Navbar
 }
 .navbutton {
   height: 1rem;
+  background: transparent;
+  border: none;
 }
 .menu {
   cursor: pointer;
   height: 100%;
   width: 100%;
   object-fit: cover;
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 @media screen and (max-width: 1024px) {
   .navlogo {
@@ -187,15 +202,41 @@ Hero Center
   align-self: center;
   /* gap: 1.5rem; */
 }
+.desktop-container {
+  max-width: 80%;
+  height: 65%;
+  margin: 0 auto;
+}
+.desktop-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .hero-img {
   height: 5rem;
   object-fit: cover;
   position: relative;
 }
 @media screen and (min-width: 768px) {
+  .desktop-container {
+    /* border: 2px solid red; */
+    max-width: 70%;
+    height: 50%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
   .hero-center {
+    margin-top: 7.81rem;
     display: flex;
     gap: 3rem;
+    justify-content: space-between;
+  }
+  .hero-info {
+    font-size: 1.5rem;
+  }
+  .title {
+    font-size: 3.5rem;
   }
   .hero-text,
   .hero-images {
@@ -204,45 +245,14 @@ Hero Center
   .form-cont {
     width: 100%;
   }
-  .images-center {
-    grid-template-rows: 150px 150px;
-    gap: 1rem;
-    grid-template-areas:
-      "a b b"
-      "a c d"
-      "a c d";
-  }
-  .hero-one,
-  .hero-two,
-  .hero-three,
-  .hero-four {
+  .desktop-container {
+    max-width: 100%;
     height: 100%;
-    border: 2px solid red;
   }
-
-  .hero-three {
-    grid-area: c;
-  }
-  .hero-four {
-    grid-area: d;
-  }
-
-  .hero-one {
-    grid-area: a;
-  }
-  .hero-two {
-    grid-area: b;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .hero-center {
-    margin-top: 7.81rem;
-  }
-  .hero-info {
-    font-size: 1.5rem;
-  }
-  .title {
-    font-size: 3.5rem;
+  .desktop-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
   }
 }
 .hero-footer {
@@ -298,6 +308,10 @@ Adventure Center
   border-radius: 1rem;
   border: 1px solid #d7d7d7;
   padding: 15px;
+  transition: var(--transition);
+}
+.nft-card:hover {
+  transform: scale(1.04);
 }
 .nft-images {
   margin-bottom: 1rem;
@@ -416,24 +430,32 @@ Meta Center
   margin-right: auto;
 }
 .meta-image {
-  width: 25rem;
-  height: 20rem;
-  margin: 0 auto;
-  display: none;
+  width: 15rem;
+  height: 12rem;
+  margin: 2rem auto;
 }
 .meta-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 @media screen and (min-width: 768px) {
+  .meta-image {
+    width: 30rem;
+    height: 20rem;
+    margin: 2rem auto;
+  }
+}
+@media screen and (min-width: 1024px) {
   .meta-center {
     display: flex;
     gap: 2rem;
     align-items: center;
   }
   .meta-image {
-    display: block;
+    margin: 0 auto;
+    width: 35rem;
+    height: 20rem;
   }
   .meta-title {
     text-align: left;
@@ -471,7 +493,6 @@ Footer
   display: grid;
   align-content: space-between;
   justify-content: center;
-  /* border: 2px solid red; */
 }
 .foot-small-title {
   color: #fff;
@@ -561,5 +582,164 @@ Place
 /* 
 ===============
 End of Place
+===============
+*/
+/* 
+===============
+Sidebar
+===============
+*/
+.section {
+  position: relative;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 60%;
+  z-index: 20;
+  background: #fff;
+  transition: var(--transition);
+  transform: translate(0%);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(64, 64, 64, 0.3);
+  z-index: 10;
+  transition: var(--transition);
+}
+.close-modal {
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(64, 64, 64, 0.3);
+  visibility: hidden;
+  z-index: 10;
+  transition: var(--transition);
+}
+.sidebar-lists {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+.close-menu {
+  position: fixed;
+  top: 2rem;
+  right: 3rem;
+  cursor: pointer;
+}
+.sidebar-button {
+  display: block;
+  border-radius: 10px;
+}
+.close-sidebar {
+  display: block;
+  visibility: visible;
+  transform: translate(100%);
+}
+/* 
+===============
+End of Sidebar
+===============
+*/
+/* 
+===============
+Modal
+===============
+*/
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 80%;
+  /* display: none; */
+}
+.modal-cont {
+  display: grid;
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+}
+.mode {
+  border-bottom: 1px solid #cfd8dc;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-title {
+  text-transform: capitalize;
+  font-weight: var(--f-weight);
+  font-size: 1.5rem;
+  color: #333;
+}
+.modal-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.wallet-options {
+  padding: 1.5rem 2rem;
+}
+.wallet-title {
+  color: #333333;
+  font-weight: var(--f-weight-2);
+  font-size: 1rem;
+}
+.wallet-coins {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #cfd8dc;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+.wallet-coins h6 {
+  font-size: 1.125rem;
+  color: #000;
+  font-weight: 600;
+  font-family: "Sora";
+}
+.wall-cont {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.grey-wall {
+  background: #f8f9fa;
+}
+@media screen and (max-width: 320px) {
+  .wall-cont {
+    gap: 0.25rem;
+  }
+}
+@media screen and (min-width: 625px) {
+  .modal {
+    max-width: 37.5rem;
+  }
+}
+.show-modal {
+  display: block;
+  visibility: visible;
+}
+/* 
+===============
+End of Modal
 ===============
 */
