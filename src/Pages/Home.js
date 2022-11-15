@@ -1,10 +1,11 @@
 import React from "react";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
-import HeroOne from "../Images/hero1.png";
-import HeroTwo from "../Images/hero2.png";
-import HeroThree from "../Images/hero3.png";
-import HeroFour from "../Images/hero4.png";
+import { NFTImages } from "../Components/NFTImages";
+import { Sidebar } from "../Components/Sidebar";
+import { Modal } from "../Components/Modal";
+import { useGlobalContext } from "../context";
+
 import MBToken from "../Assets/mbtoken.svg";
 import OpenSea from "../Assets/openseaLogo.svg";
 import Metamask from "../Assets/metamaskLogo.svg";
@@ -18,6 +19,7 @@ import ImageSix from "../Images/image6.png";
 import ImageSeven from "../Images/image7.png";
 import ImageEight from "../Images/image8.png";
 import MetaImage from "../Images/nft-multiple.png";
+import Desktop from "../Images/desktop-image.png";
 
 const NFTCards = [
   {
@@ -94,33 +96,11 @@ const NFTCards = [
   },
 ];
 
-const NFTImages = (props) => {
-  const { title, rates, distance, avail, star, NftImages } = props.nfts;
-  return (
-    <React.Fragment>
-      <article className="nft-card">
-        <div className="nft-images">
-          <img src={NftImages} alt="nft building" className="nft" />
-        </div>
-        <div className="nft-info">
-          <h4 className="nft-title">{title}</h4>
-          <p className="nft-rates">{rates}</p>
-        </div>
-        <div className="nft-distance">
-          <p className="distance">{distance}</p>
-          <p className="avail">{avail}</p>
-        </div>
-        <div className="star-cont">
-          <img src={star} alt="five star rating" className="star" />
-        </div>
-      </article>
-    </React.Fragment>
-  );
-};
-
 function Home() {
+  const data = useGlobalContext();
+  console.log(data);
   return (
-    <section>
+    <section className="section">
       <div className="section-center">
         <Navbar />
         <div className="hero-center">
@@ -151,19 +131,8 @@ function Home() {
             </form>
           </div>
           <div className="hero-images">
-            <div className="images-center">
-              <div className="hero-one">
-                <img src={HeroOne} className="hero-img" alt="nft house" />
-              </div>
-              <div className="hero-two">
-                <img src={HeroTwo} className="hero-img" alt="nft house" />
-              </div>
-              <div className="hero-three">
-                <img src={HeroThree} className="hero-img" alt="nft house" />
-              </div>
-              <div className="hero-four">
-                <img src={HeroFour} className="hero-img" alt="nft house" />
-              </div>
+            <div className="desktop-container">
+              <img src={Desktop} alt="nfts" className="desktop-image" />
             </div>
           </div>
         </div>
@@ -206,6 +175,8 @@ function Home() {
         </div>
       </section>
       <Footer />
+      <Sidebar />
+      <Modal />
     </section>
   );
 }
