@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NavLogo from "../Assets/metabnb.svg";
 import MenuButton from "../Assets/icon-menu.svg";
+import { useGlobalContext } from "../context";
 
 export const Navbar = () => {
+  const { openModal, openSidebar } = useGlobalContext();
   return (
     <React.Fragment>
       <nav className="navbar">
@@ -26,10 +28,14 @@ export const Navbar = () => {
             </Link>
           </div>
           <div className="nav-buttons">
-            <div className="navbutton">
+            <button className="navbutton" onClick={openSidebar}>
               <img src={MenuButton} className="menu" alt="menu button" />
-            </div>
-            <button className="btn connect" id="btn-connect">
+            </button>
+            <button
+              className="btn connect"
+              id="btn-connect"
+              onClick={openModal}
+            >
               Connect wallet
             </button>
           </div>
