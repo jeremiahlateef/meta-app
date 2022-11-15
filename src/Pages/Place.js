@@ -2,6 +2,8 @@ import React from "react";
 import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 import { NFTImages } from "../Components/NFTImages";
+import { Sidebar } from "../Components/Sidebar";
+import { Modal } from "../Components/Modal";
 import Stars from "../Assets/stars-multiple.png";
 import ImageOne from "../Images/image1.png";
 import ImageTwo from "../Images/image2.png";
@@ -171,7 +173,7 @@ const NFTCards = [
 
 function Place() {
   return (
-    <section>
+    <section className="section">
       <div className="section-center">
         <Navbar />
         <div className="section-center">
@@ -201,6 +203,8 @@ function Place() {
       <div className="footer-place">
         <Footer />
       </div>
+      <Sidebar />
+      <Modal />
     </section>
   );
 }
