@@ -309,6 +309,7 @@ Adventure Center
   border: 1px solid #d7d7d7;
   padding: 15px;
   transition: var(--transition);
+  margin-bottom: 1.5rem;
 }
 .nft-card:hover {
   transform: scale(1.04);
@@ -350,6 +351,9 @@ Adventure Center
   max-height: 100%;
 }
 @media screen and (min-width: 375px) {
+  .nft-card {
+    margin-bottom: 0;
+  }
   .nft-center {
     display: flex;
     flex-wrap: wrap;
