@@ -11,7 +11,7 @@ export const Sidebar = () => {
         isSidebarOpen ? ` modal-overlay` : `modal-overlay close-modal`
       }`}
     >
-      <div
+      <aside
         className={`${isSidebarOpen ? ` sidebar` : `sidebar close-sidebar`}`}
       >
         <button className="close-btn" onClick={closeSidebar}>
@@ -41,7 +41,7 @@ export const Sidebar = () => {
             Connect wallet
           </button>
         </div>
-      </div>
+      </aside>
     </div>
   );
 };
