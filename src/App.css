@@ -615,7 +615,6 @@ Sidebar
   height: 100%;
   background: rgba(64, 64, 64, 0.3);
   z-index: 10;
-  transition: var(--transition);
 }
 .close-modal {
   visibility: hidden;
@@ -630,7 +629,6 @@ Sidebar
   background: rgba(64, 64, 64, 0.3);
   visibility: hidden;
   z-index: 10;
-  transition: var(--transition);
 }
 .sidebar-lists {
   margin-top: 6rem;
