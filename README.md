@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Metabnb
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React demo of a metaverse rental marketplace, rebuilt to be accessible and well engineered.
+Live site: https://metabnbweb.netlify.app/
 
-## Available Scripts
+Payments, wallets and NFTs are demonstrations only. Nothing is charged and no wallet is contacted.
 
-In the project directory, you can run:
+## What changed
 
-### `npm start`
+The original was a visual clone with pictures of text, a modal that trapped nothing, and a menu that stayed in the tab order while hidden. The rebuild keeps the look of the brand and fixes the structure.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Area | Before | After |
+| --- | --- | --- |
+| Navigation | One page, hidden menu in the tab order | Six routes with real links, skip link, labelled landmarks |
+| Menu and wallet | Custom modal, ignored Escape, focus not managed | Native `dialog` with `showModal()`: focus trap, Escape, focus return |
+| Page changes | No title or focus update | Title updates and focus moves to the new `h1` |
+| Favourites | Heart baked into each image | Real toggle button (`aria-pressed`), saved to the device, announced |
+| Ratings | Image of stars | Text: "Rated 4.8 out of 5" |
+| Search and filters | None | Labelled search, category, sort, price, saved only. State lives in the URL |
+| Booking | None | Validated form with error summary, inline errors, price summary |
+| Motion | Menu icon animated forever | No looping motion, honours reduced motion |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Home, Places (search and filters), Place detail with booking, NFTs with waitlist, Community with FAQ, Accessibility statement, 404.
+- Demo wallet connect (MetaMask or WalletConnect) with status messages.
+- Saved places kept in `localStorage`.
+- Accessibility statement with a criteria table that matches the test results.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How it was tested
 
-### `npm run build`
+- axe-core 4.10.2 (WCAG 2.0, 2.1 and 2.2 AA plus best practices) on every route and on open states: menu, wallet dialog in each step, booking errors, empty results, waitlist errors, open FAQ. Zero violations.
+- Scripted keyboard checks: skip link, tab order, visible focus on every stop, dialog focus trap, Escape, focus return, route change focus.
+- Reflow at 320 and 375 px, text spacing, 200% text, 44px targets, reduced motion, forced colours.
+- 15 React Testing Library unit tests.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Total: 150 end to end checks and 15 unit tests, all passing. The suite is `run_meta.cjs` (Playwright).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Not yet done: a manual pass with NVDA, JAWS or VoiceOver. This is listed on the in-site accessibility page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Run it
 
-### `npm run eject`
+```bash
+npm install
+npm start          # http://localhost:3000
+npm test           # unit tests
+npm run build      # production build in build/
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Notes
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Deployed on Netlify. `public/_redirects` sends deep links to `index.html`.
+- The artwork is small (about 260px wide). Replace it with larger images when available.
+- The footer links to the author LinkedIn profile.
